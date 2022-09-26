@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
@@ -15,12 +14,9 @@ import PhotoGallery from "./pages/PhotoGallery";
 import Footer from "./components/Footer";
 import AboutPCSM from "./pages/AboutPCSM";
 import ChairmanMessage from "./pages/ChairmanMessage";
-// import DirectorMessage from "./pages/DirectorMessage";
 import Insfratructure from "./pages/Insfratructure";
 import OurMissionAndVission from "./pages/OurMissionAndVission";
 import AboutUs from "./pages/AboutUs";
-// import Header from './components/Header'
-// import TestAnything from './components/TestAnything'
 
 const theme = createTheme({
   palette: {

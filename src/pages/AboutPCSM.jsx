@@ -1,8 +1,6 @@
-import { Card, CardContent, CardMedia, Container, Grid, Paper, Typography } from '@mui/material'
+import { Card, CardContent, CardMedia, Grid, Paper, Typography } from '@mui/material'
 import React from 'react'
 import Image from '../images/degree.png'
-import Image1 from '../images/degree1.png'
-import Image2 from '../images/degree2.jpeg'
 
 const AboutPCSM = () => {
   return (

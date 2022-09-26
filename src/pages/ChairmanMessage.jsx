@@ -1,8 +1,6 @@
 import { Card, CardContent, CardMedia, Paper, Typography } from '@mui/material'
 import React from 'react'
-import Image from '../images/write1.jpg'
 import Image1 from '../images/write.webp'
-import Image2 from '../images/write2.webp'
 
 const ChairmanMessage = () => {
   return (
