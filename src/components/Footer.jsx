@@ -143,7 +143,7 @@ const handleInsta = () => {
                 minHeight: 250,
               }}
             >
-              <CardHeader title="Subscribe Now" />
+              <CardHeader title="Subscribe" />
               <CardContent>
                 <Paper
                   variant="outlined"
