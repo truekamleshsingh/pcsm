@@ -1,5 +1,5 @@
 import logo from "../images/pcsm_logo_1.png";
-import React, { useState } from "react";
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -8,41 +8,20 @@ import {
   Tooltip,
   Menu,
   MenuItem,
-  Typography,
-  Dialog,
-  Slide,
   IconButton,
-  Paper,
-  Container,
-  Grid,
-  TextField,
-  FormControl,
-  FormControlLabel,
-  Checkbox,
-  InputAdornment,
   createTheme,
   useMediaQuery,
   ThemeProvider,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import LoginIcon from "@mui/icons-material/Login";
 import ApprovalIcon from "@mui/icons-material/Approval";
 import MiscellaneousServicesIcon from "@mui/icons-material/MiscellaneousServices";
 import { yellow } from "@mui/material/colors";
 import { NavLink } from "react-router-dom";
 import PopupState, { bindMenu, bindTrigger } from "material-ui-popup-state";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import CopyrightIcon from "@mui/icons-material/Copyright";
-import Cancel from "@mui/icons-material/Cancel";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import DrawerCompPre from "./DrawerCompPre";
 import Login from "./Login";
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
 
 const theme = createTheme({
   palette: {
@@ -81,36 +60,7 @@ const StyledButtonHome = styled(Button)`
 `;
 
 function NavBar() {
-  // const [open, setOpen] = useState(false);
 
-  // const handleClose = () => {
-  //   setOpen(false);
-  // };
-
-  // const handleClickOpen = () => {
-  //   setOpen(true);
-  // };
-
-  // const [values, setValues] = React.useState({
-  //   password: "",
-
-  //   showPassword: false,
-  // });
-
-  // const handleChange = (prop) => (event) => {
-  //   setValues({ ...values, [prop]: event.target.value });
-  // };
-
-  // const handleClickShowPassword = () => {
-  //   setValues({
-  //     ...values,
-  //     showPassword: !values.showPassword,
-  //   });
-  // };
-
-  // const handleMouseDownPassword = (event) => {
-  //   event.preventDefault();
-  // };
 
   // Breakpoint
 
