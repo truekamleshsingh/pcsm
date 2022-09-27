@@ -38,6 +38,7 @@ import Cancel from "@mui/icons-material/Cancel";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import DrawerCompPre from "./DrawerCompPre";
+import Login from "./Login";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -80,36 +81,36 @@ const StyledButtonHome = styled(Button)`
 `;
 
 function NavBar() {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
 
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
 
-  const [values, setValues] = React.useState({
-    password: "",
+  // const [values, setValues] = React.useState({
+  //   password: "",
 
-    showPassword: false,
-  });
+  //   showPassword: false,
+  // });
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+  // const handleChange = (prop) => (event) => {
+  //   setValues({ ...values, [prop]: event.target.value });
+  // };
 
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword,
-    });
-  };
+  // const handleClickShowPassword = () => {
+  //   setValues({
+  //     ...values,
+  //     showPassword: !values.showPassword,
+  //   });
+  // };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  // const handleMouseDownPassword = (event) => {
+  //   event.preventDefault();
+  // };
 
   // Breakpoint
 
@@ -133,124 +134,8 @@ function NavBar() {
           </div> :
 
             <div>
-              {/* Login Dialog */}
-              <Dialog
-                open={open}
-                onClose={handleClose}
-                TransitionComponent={Transition}
-              >
-                <Paper>
-                  <Container
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Grid container direction="column" alignItems="center">
-                      <Grid item>
-                        <AccountCircleIcon style={{ fontSize: 100 }} />
-                      </Grid>
-                      <Grid item>
-                        <Typography>Please Sign In</Typography>
-                      </Grid>
-                      <Grid item>
-                        <TextField
-                          name="email"
-                          type="email"
-                          label="E-mail"
-                          placeholder="onlyPfixs@gmail.com"
-                          size="small"
-                          margin="dense"
-                          sx={{
-                            width: 250,
-                          }}
-                        />
-                      </Grid>
-                      <Grid item>
-                        <TextField
-                          sx={{
-                            width: 250,
-                          }}
-                          name="password"
-                          placeholder="password"
-                          label="Password"
-                          size="small"
-                          margin="dense"
-                          type={values.showPassword ? "text" : "password"}
-                          value={values.password}
-                          onChange={handleChange("password")}
-                          InputProps={{
-                            endAdornment: (
-                              <InputAdornment position="end">
-                                <IconButton
-                                  onClick={handleClickShowPassword}
-                                  onMouseDown={handleMouseDownPassword}
-                                  edge="end"
-                                >
-                                  {values.showPassword ? (
-                                    <VisibilityOffIcon />
-                                  ) : (
-                                    <VisibilityIcon />
-                                  )}
-                                </IconButton>
-                              </InputAdornment>
-                            ),
-                          }}
-                        />
-                      </Grid>
-                      <Grid container direction={'column'} >
-                        <Grid item>
-                          <FormControl>
-                            <FormControlLabel
-                              value={""}
-                              label="Remember me"
-                              control={<Checkbox />}
-                              labelPlacement="end"
-                            />
-                          </FormControl>
-                        </Grid>
-
-                        <Grid item>
-                          <Button variant="contained" fullWidth onClick={handleClose} >
-                            Sign In
-                          </Button>
-                        </Grid>
-                        <Grid item>
-                          <Typography
-                            variant="subtitle2"
-                            sx={{
-                              display: "flex",
-                              justifyContent: "center",
-                              mt: 1,
-                              mb: 1,
-                            }}
-                          >
-                            <CopyrightIcon sx={{ mr: 1 }} />
-                            2022 - 2023
-                          </Typography>
-                        </Grid>
-                      </Grid>
-                      <Grid item>
-                        <Tooltip title="Close" arrow placement="right">
-                          <IconButton onClick={handleClose}>
-                            <Cancel />
-                          </IconButton>
-                        </Tooltip>
-                      </Grid>
-                    </Grid>
-                  </Container>
-                </Paper>
-              </Dialog>
-
-
-              <Tooltip title="Login" placement={"left"} arrow>
-                <StyledButtonHome variant="outlined" onClick={handleClickOpen}>
-                  Login
-                  <LoginIcon />
-                </StyledButtonHome>
-              </Tooltip>
-              <StyledNavLink to={"/services"}>
+              <Login />
+              <StyledNavLink to={"/services"} sx={{ ml:1 }}>
                 <Tooltip title="Services" placement={"bottom"} arrow>
                   <StyledButtonHome variant="outlined">
                     Services
@@ -258,7 +143,7 @@ function NavBar() {
                   </StyledButtonHome>
                 </Tooltip>
               </StyledNavLink>
-              <StyledNavLink to={"/certificateVarify"}>
+              <StyledNavLink to={"/certificateVarify"} >
                 <Tooltip title="Certificate Varify" placement={"bottom"} arrow>
                   <StyledButtonHome variant="outlined">
                     Certificate Varify

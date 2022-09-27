@@ -16,6 +16,7 @@ import DownloadForOfflineRoundedIcon from '@mui/icons-material/DownloadForOfflin
 import RingVolumeRoundedIcon from '@mui/icons-material/RingVolumeRounded';
 import { NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
+import Login from './Login';
 
 
 
@@ -42,8 +43,8 @@ const DrawerCompPre = (props) => {
 
         const itemList = [
             {
-                text: 'Login',
-                path: '/',
+                text: <Login />,
+                path: false,
                 icon: <LoginIcon />
             },
             {
@@ -246,8 +247,8 @@ const DrawerCompPre = (props) => {
                                                 {
                                                     item.expandTrue ? item.subMenu.map((subMenu, index) => (
                                                         <>
-                                                            <StyledNavLink to={subMenu.path} key={index}>
-                                                                <ListItem  button  sx={{ ml: 2, }} >
+                                                            <StyledNavLink to={subMenu.path} >
+                                                                <ListItem key={index} button  sx={{ ml: 2, }} >
                                                                     {/* {subMenu.icon} */}
                                                                     < ListItemText inset primary={subMenu.text} />
                                                                 </ListItem>
