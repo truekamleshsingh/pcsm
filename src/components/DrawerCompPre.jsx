@@ -20,7 +20,7 @@ import styled from '@emotion/styled';
 
 
 
-const DrawerComp = (props) => {
+const DrawerCompPre = (props) => {
     // console.log(props)
     const [openCollapse, setOpenCollapse] = React.useState(false);
 
@@ -234,8 +234,8 @@ const DrawerComp = (props) => {
                             itemList.map((item, index) => {
                                 return (
                                     <>
-                                        <StyledNavLink to={item.path} onClick={item.subMenu && openCollapse}>
-                                            <ListItem key={index.toString()} button onClick={item.expandTrue ? handleOpenSettings : undefined}>
+                                        <StyledNavLink key={item.text} to={item.path} onClick={item.subMenu && openCollapse}>
+                                            <ListItem  button onClick={item.expandTrue ? handleOpenSettings : undefined}>
                                                 <ListItemIcon>{item.icon}</ListItemIcon>
                                                 <ListItemText primary={item.text} sx={{}} />
                                                 {openCollapse && item.subMenu ? item.iconLess : item.iconMore}
@@ -246,8 +246,8 @@ const DrawerComp = (props) => {
                                                 {
                                                     item.expandTrue ? item.subMenu.map((subMenu, index) => (
                                                         <>
-                                                            <StyledNavLink to={subMenu.path}>
-                                                                <ListItem button key={subMenu.text} sx={{ ml: 2, }} >
+                                                            <StyledNavLink to={subMenu.path} key={index}>
+                                                                <ListItem  button  sx={{ ml: 2, }} >
                                                                     {/* {subMenu.icon} */}
                                                                     < ListItemText inset primary={subMenu.text} />
                                                                 </ListItem>
@@ -267,25 +267,7 @@ const DrawerComp = (props) => {
                     </List>
                 </Drawer>
 
-                {/* <Drawer anchor='right'
-                open={opneDrawer}
-                onClose={() => setOpneDrawer(false)}
-                elevation={5}>
-                <ListItem button onClick={handleOpenSettings}>
-                    <ListItemIcon>
-                        <SettingsIcon sx={{ pr: 0, mr: 0, }} />
-                    </ListItemIcon>
-                    <ListItemText primary="Settings" />
-                    {openCollapse ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                </ListItem>
-                <Collapse in={openCollapse} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItem button >
-                            <ListItemText inset primary="Starred" />
-                        </ListItem>
-                    </List>
-                </Collapse>
-            </Drawer> */}
+                
 
 
                 <IconButton onClick={() => setOpneDrawer(!opneDrawer)} sx={{ color: 'black' }}>
@@ -295,4 +277,4 @@ const DrawerComp = (props) => {
         )
     }
 
-    export default DrawerComp
+    export default DrawerCompPre

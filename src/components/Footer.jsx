@@ -198,7 +198,7 @@ const handleInsta = () => {
           justifyContent: "center",
         }}
       >
-        <Box>
+        <Box sx={{m:2, textAlign : 'center'}}>
           <Typography align={"center"} variant={"overline"}>
             &#169; Copyright 2019-2020 by Pfixs Ventures Pvt Ltd. All Rights
             Reserved.

@@ -275,7 +275,7 @@ function NavBar() {
 
       {/* ///////Styled App Bar blue */}
 
-      {isMatch ? console.log("Close") :
+      {isMatch ? undefined :
         <StyledAppBarBlue position="sticky">
           <StyledToolbar>
             <div>
