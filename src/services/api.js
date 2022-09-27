@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-// const URL = 'https://git.heroku.com/react-express.git'
-const URL = 'http://localhost:3001'
+const URL = 'https://pcsmapi.herokuapp.com/'
+// const URL = 'http://localhost:3001'
 
 export const addSubcriber = async (subscriberData) => {
     try {
