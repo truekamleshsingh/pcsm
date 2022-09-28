@@ -19,9 +19,15 @@ import {
   TextField,
 } from "@mui/material";
 import { franchiseeEnquery, studentEnquery } from "../services/api";
+import { useNavigate } from "react-router-dom";
 
-function TabPanel(props) {
+
+
+function TabPanel(props) { 
+
   const { children, value, index, ...other } = props;
+
+  
 
   return (
     <div
@@ -70,7 +76,7 @@ export default function BasicTabs() {
     setDistrict(event.target.value);
   };
 
-
+  const navigate = useNavigate()
 
   ////// STUDENT REGISTER 
   const defaultStudentData = {
@@ -106,9 +112,11 @@ export default function BasicTabs() {
     }
   }
 
-  const handleStudentRegister = async () => {
-    console.log(studentEnqueryData)
-    await studentEnquery(studentEnqueryData)
+  const handleStudentRegister = async () => {    
+    // console.log(studentEnqueryData)
+    const resStudentEnquery = await studentEnquery(studentEnqueryData);
+    console.log(resStudentEnquery);
+    navigate("/")
   }
 
 
