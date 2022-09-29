@@ -21,6 +21,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { useState } from "react";
 import { addSubcriber } from "../services/api";
+import { toast } from "react-toastify";
 
 const StyledA = styled("a")`
   color: #fff;
@@ -42,17 +43,25 @@ const Footer = () => {
   const [subscribeValue, setSubscribeValue] = useState(defaultSubscribeValue)
 
   const subscribeValueChange = (e) => {
-    setSubscribeValue({...subscribeValue, [e.target.name] : e.target.value})
-    console.log(subscribeValue)
+    setSubscribeValue({ ...subscribeValue, [e.target.name]: e.target.value })
   }
 
   const handleSubscribe = async (e) => {
-    await addSubcriber(subscribeValue)
+    var mailformat = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+      if (!subscribeValue.email) {
+        toast.error("Email is required")
+      } else if(!subscribeValue.email.match(mailformat)){
+        toast.error("Not a valid email")
+      } else {
+        const result = await addSubcriber(subscribeValue)
+        console.log(result)
+      }
   }
 
-const handleInsta = () => {
-  console.log("handleInsta clicked")
-}
+  const handleInsta = () => {
+    console.log("handleInsta clicked")
+  }
 
   return (
     <>
@@ -161,7 +170,7 @@ const handleInsta = () => {
                     sx={{ mr: 2 }}
                     placeholder="Enput your email"
                     onChange={e => subscribeValueChange(e)}
-                  ></TextField>
+                  />
                   <Button variant="contained" onClick={e => handleSubscribe(e)} >Subscribe</Button>
                 </Paper>
                 <Box
@@ -198,7 +207,7 @@ const handleInsta = () => {
           justifyContent: "center",
         }}
       >
-        <Box sx={{m:2, textAlign : 'center'}}>
+        <Box sx={{ m: 2, textAlign: 'center' }}>
           <Typography align={"center"} variant={"overline"}>
             &#169; Copyright 2019-2020 by Pfixs Ventures Pvt Ltd. All Rights
             Reserved.

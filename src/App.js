@@ -17,6 +17,9 @@ import ChairmanMessage from "./pages/ChairmanMessage";
 import Insfratructure from "./pages/Insfratructure";
 import OurMissionAndVission from "./pages/OurMissionAndVission";
 import AboutUs from "./pages/AboutUs";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ReactHooksForm from '../src/pages/ReactHooksForm.jsx';
 
 const theme = createTheme({
   palette: {
@@ -27,6 +30,7 @@ const theme = createTheme({
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer position="top-center" />
       <Paper
         variant={"outlined"}
         sx={{
@@ -55,6 +59,7 @@ function App() {
           <Route path="/directorMessage" element={<ChairmanMessage />} />
           <Route path="/Insfratructure" element={<Insfratructure />} />
           <Route path="/ourMissionAndVission" element={<OurMissionAndVission />} />
+          <Route path="/rectform" element={<ReactHooksForm />} />
 
         </Routes>
         <ThemeProvider theme={theme}>

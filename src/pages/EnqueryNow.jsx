@@ -20,6 +20,7 @@ import {
 } from "@mui/material";
 import { franchiseeEnquery, studentEnquery } from "../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 
@@ -116,7 +117,10 @@ export default function BasicTabs() {
     // console.log(studentEnqueryData)
     const resStudentEnquery = await studentEnquery(studentEnqueryData);
     console.log(resStudentEnquery);
-    navigate("/")
+    if(resStudentEnquery){
+      // toast.success(resStudentEnquery.data.message)
+      navigate("/")
+    }
   }
 
 
