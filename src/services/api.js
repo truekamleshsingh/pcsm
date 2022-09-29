@@ -2,8 +2,8 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 // import { toast } from 'react-toastify'
 
-// const URL = 'https://pcsmapi.herokuapp.com'
-const URL = 'http://localhost:3001'
+const URL = 'https://pcsmapi.herokuapp.com'
+// const URL = 'http://localhost:3001'
 
 export const addSubcriber = async (subscriberData) => {
     try {
@@ -25,7 +25,7 @@ export const studentEnquery = async (studentEnqueryData) => {
     try{
         const result = await axios.post(`${URL}/studentEnquery`, studentEnqueryData)
         if(result){
-            toast.success("Student Enquery successfully send")
+            toast.success("Student Enquery successfully")
             return result
         }else{
             toast.error("Failed to get enquery")
@@ -39,8 +39,16 @@ export const studentEnquery = async (studentEnqueryData) => {
 
 export const franchiseeEnquery = async (franchiseeEnqueryData) => {
     try{
-        return await axios.post(`${URL}/franchiseeEnquery`, franchiseeEnqueryData)
+        const result = await axios.post(`${URL}/franchiseeEnquery`, franchiseeEnqueryData)
+        if(result){
+            toast.success("Franchisee Enquery successfully")
+            return result
+        }else{
+            toast.error("Failed to get enquery")
+            return false
+        }
     } catch{
+        toast.error("Please fill required fields")
         console.log('Error while calling franchiseeEnquery api ')
     }
 }

@@ -20,7 +20,8 @@ import {
 } from "@mui/material";
 import { franchiseeEnquery, studentEnquery } from "../services/api";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+
+// import { toast } from "react-toastify";
 
 
 
