@@ -48,10 +48,9 @@ const Footer = () => {
 
   const handleSubscribe = async (e) => {
     
-    
       if (!subscribeValue.email) {
         toast.error("Email is required")
-      } else if(!subscribeValue.email.match([/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/])){
+      } else if(!subscribeValue.email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)){
         toast.error("Not a valid email")
       } else {
         const result = await addSubcriber(subscribeValue)
