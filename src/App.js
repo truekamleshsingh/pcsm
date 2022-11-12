@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -29,7 +29,7 @@ const theme = createTheme({
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <ToastContainer position="top-center" />
       <Paper
         variant={"outlined"}
@@ -49,7 +49,7 @@ function App() {
           <Route path="/certificateVarify" element={<CertificateVarify />} />
           <Route path="/enqueryNow" element={<EnqueryNow />} />
           <Route path="/contactUs" element={<ContactUs />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<PageNotFound />}  replace />
           <Route path="/onlineQuiz" element={<OnlineQuiz />} />
           <Route path="/certificates" element={<Certificates />} />
           <Route path="/photoGallery" element={<PhotoGallery />} />
@@ -66,7 +66,7 @@ function App() {
           <Footer />
         </ThemeProvider>
       </Paper>
-    </BrowserRouter>
+    </>
   );
 }
 
